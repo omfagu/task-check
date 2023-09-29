@@ -1,0 +1,163 @@
+.week {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  max-width: 350px; /* Maksimum genişlik ayarı */
+  width: 100%; /* Genişliği tamamen doldurması için */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid transparent; /* Dış border başlangıçta şeffaf */
+  border-radius: 8px;
+  animation: borderTransition 5s linear infinite alternate;
+  margin: 2rem;
+  text-align: center; /* İçerik metinini ortalamak için */
+  background-color: rgb(32, 32, 32);
+}
+.week label {
+  color: aliceblue;
+}
+.week h1 {
+  color: aliceblue;
+}
+.week h2 {
+  color: aliceblue;
+}
+.week label {
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+@keyframes borderTransition {
+  0% {
+    border-color: #eeff00; /* Başlangıç rengi (örneğin mavi) */
+  }
+  100% {
+    border-color: #7e1e76; /* Bitiş rengi (örneğin kırmızı) */
+  }
+}
+
+.counter {
+  width: 300px;
+  border: 2px solid transparent; /* Dış border başlangıçta şeffaf */
+  border-radius: 8px;
+  animation: borderTransition 5s linear infinite alternate;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.checked-count {
+  color: rgb(79, 241, 64); /* Yazı rengini beyaz yapar */
+  font-weight: bold;
+}
+
+.unchecked-count {
+  color: rgb(255, 8, 8); /* Yazı rengini beyaz yapar */
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  border: 3px solid transparent; /* Dış border başlangıçta şeffaf */
+  border-radius: 8px;
+  animation: borderTransition 5s linear infinite alternate;
+  margin: 2rem;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3rem;
+}
+
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 25px;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background: rgb(107, 33, 122);
+  border-radius: 50px;
+  transition: all 0.7s;
+  --spread: 20px;
+  margin-left: 1rem;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background: black;
+  box-shadow: -2px -2px var(--spread) 0px #ffd700,
+    0 -5px var(--spread) 0px #ffd700, 5px -5px var(--spread) 0px #ffd700,
+    5px 0 var(--spread) 0px #00ff6a, 5px 5px var(--spread) 0px #ffd700,
+    0 5px var(--spread) 0px #ffd700, -5px 5px var(--spread) 0px #1900ff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+  animation: checkmark 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #ffd700;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+/* Add animation for checkmark */
+@keyframes checkmark {
+  from {
+    transform: rotate(-45deg) scale(0);
+  }
+
+  to {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+/* Style the label text */
+.container span {
+  margin-left: 2em;
+  color: black;
+  font-weight: bold;
+}
