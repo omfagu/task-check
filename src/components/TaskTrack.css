@@ -12,7 +12,7 @@
   animation: borderTransition 5s linear infinite alternate;
   margin: 2rem;
   text-align: center; /* İçerik metinini ortalamak için */
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(0, 0, 0);
 }
 .week label {
   color: aliceblue;
